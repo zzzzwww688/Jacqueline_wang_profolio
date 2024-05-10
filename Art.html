@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Jacqueine's Profolio Art Page</title>
+    <link rel="stylesheet" type="text/css" href="art.styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Madimi+One&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&display=swap" rel="stylesheet">  
+  </head>
+  <body>
+    <header>
+        <div id="header">
+            <h1>
+                <p link rel="preconnect" href="https://fonts.googleapis.com">Art Projects</p>
+            </h1>
+        </div>
+    </header>
+
+    <div id="art-container-title">
+        <h2>Dance</h2>
+    </div>
+
+    <div class="Art-container">
+        <div class="kistch_mv">
+            <!-- <a href="https://youtu.be/d8AUbIV5k-s?si=AT_NBj13__CNlHVO" target="_blank">
+                <img src="/Users/jacquelinewang/Desktop/web_dev_spring24/midterm/img/kistch_mv.png" alt="kistch_mv">
+            </a> -->
+            <iframe width="1440" height=780 src="https://www.youtube.com/embed/d8AUbIV5k-s?si=NcJ3ja0J_foDOaW0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <p class="art-title">Dance mv "Ktisch"</p>
+        </div>
+
+        <div class="Photo Gallery">
+            <a href="Photo_gallery.html" target="_blank">
+                <img src="img/flower_bath.JPG" alt="flower_bath">
+            <p class="art-title">Photo Gallery</p>
+        </div>
+    </div> 
+
+    <nav id="sidebar">
+        <ul>
+            <li><a href="profolio_project.html">About</a></li>
+            <li><a href="/Users/jacquelinewang/Desktop/Jacqueline_wang_profolio/Science.html">Science</a></li>
+            <li><a href="Art.html">Art</a></li>
+            <li><a href="/Users/jacquelinewang/Desktop/Jacqueline_wang_profolio/Contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div id="search-box" style="position:fixed; bottom:0; align-items: center; margin-top: 20px; right:0;">
+        <input type="text" id="art-search" placeholder="Search art projects by title..." style="width: 80%; padding: 10px; font-size: 16px;">
+    </div>    
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('art-search');
+            const projects = document.querySelectorAll('.Art-container > div'); 
+        
+            searchInput.addEventListener('keyup', function() {
+                const searchTerm = this.value.toLowerCase();
+                
+                projects.forEach(project => {
+                    const title = project.querySelector('.art-title').textContent.toLowerCase();
+                    project.style.display = title.includes(searchTerm) ? '' : 'none';
+                });
+            });
+        });
+        </script>
+        
+    
+  </body>
+</html>
